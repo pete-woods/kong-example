@@ -22,6 +22,7 @@ services:
           - app.circleci.com
         paths:
           - /
+          - /error-page
   - host: app-canary.circleci.com
     name: web-ui-canary
     port: 80
@@ -32,6 +33,7 @@ services:
           - app.circleci.com
         paths:
           - /~/
+          - /~/error-page
   - host: www-api
     name: www-api
     port: 80
