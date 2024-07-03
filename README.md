@@ -2,7 +2,7 @@
 
 ## Starting kong
 ```
-docker-compose up -d
+KONG_DOCKER_TAG=kong:3.3.1 docker-compose up -d
 ```
 
 ## Making requests
