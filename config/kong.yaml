@@ -33,8 +33,8 @@ services:
         hosts:
           - app-canary.circleci.com
         paths:
-          - /~/
-          - /~/error-page
+          - ~/
+          - ~/error-page
   - host: web-ui
     name: web-ui-experiment
     port: 80
@@ -44,8 +44,8 @@ services:
         hosts:
           - app-experiment.circleci.com
         paths:
-          - /~/
-          - /~/error-page
+          - ~/
+          - ~/error-page
   - host: www-api
     name: www-api
     port: 80
