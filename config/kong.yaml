@@ -1,8 +1,9 @@
 _format_version: "3.0"
 _transform: true
 
+
 services:
-  - host: circleci.com
+  - host: static-site
     name: static-site
     port: 80
     protocol: http
@@ -12,7 +13,7 @@ services:
           - circleci.com
         paths:
           - /
-  - host: app.circleci.com
+  - host: web-ui
     name: web-ui
     port: 80
     protocol: http
@@ -23,14 +24,25 @@ services:
         paths:
           - /
           - /error-page
-  - host: app-canary.circleci.com
+  - host: web-ui
     name: web-ui-canary
     port: 80
     protocol: http
     routes:
       - name: web-ui-canary-1
         hosts:
-          - app.circleci.com
+          - app-canary.circleci.com
+        paths:
+          - /~/
+          - /~/error-page
+  - host: web-ui
+    name: web-ui-experiment
+    port: 80
+    protocol: http
+    routes:
+      - name: web-ui-experiment-1
+        hosts:
+          - app-experiment.circleci.com
         paths:
           - /~/
           - /~/error-page

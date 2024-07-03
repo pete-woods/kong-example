@@ -6,13 +6,13 @@ x-kong-config:
 
 services:
 
-  app.circleci.com:
+  web-ui:
     image: hashicorp/http-echo
     command: ["-listen=:80", "-text='web-ui'"]
     networks:
       - kong-net
 
-  circleci.com:
+  static-site:
     image: hashicorp/http-echo
     command: ["-listen=:80", "-text='static site'"]
     networks:
